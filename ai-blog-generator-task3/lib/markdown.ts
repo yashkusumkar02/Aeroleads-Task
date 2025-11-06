@@ -6,10 +6,10 @@ import rehypeStringify from 'rehype-stringify';
 
 export async function renderMarkdown(markdown: string): Promise<string> {
   const result = await remark()
-    .use(remarkRehype)
-    .use(rehypePrismPlus, { ignoreMissing: true })
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypePrismPlus as any, { ignoreMissing: true })
     .use(rehypeSanitize)
-    .use(rehypeStringify)
+    .use(rehypeStringify, { allowDangerousHtml: true })
     .process(markdown);
 
   return String(result);

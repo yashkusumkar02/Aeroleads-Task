@@ -112,9 +112,8 @@ export async function POST(request: NextRequest) {
     const baseSlug = slugify(parsed.title);
     const slug = generateUniqueSlug(baseSlug, existingSlugs);
 
-    const title = parsed.title;
     const formattedMeta = {
-      title,
+      title: parsed.title,
       metaTitle: extractedMeta.metaTitle,
       metaDesc: extractedMeta.metaDesc,
       keywords: extractedMeta.keywords,

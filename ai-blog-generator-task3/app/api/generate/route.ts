@@ -177,9 +177,8 @@ export async function POST(request: NextRequest) {
         const slug = generateUniqueSlug(baseSlug, existingSlugs);
         existingSlugs.push(slug);
 
-        const title = parsed.title;
         const formattedMeta = {
-          title,
+          title: parsed.title,
           metaTitle: extractedMeta.metaTitle,
           metaDesc: extractedMeta.metaDesc,
           keywords: extractedMeta.keywords,

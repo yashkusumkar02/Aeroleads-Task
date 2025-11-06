@@ -166,7 +166,7 @@ export default function GenerationStatusPanel({
       {/* Celebration Animation */}
       {showCelebration && (
         <>
-          <Confetti show={showCelebration} />
+          <Confetti />
           <div className="fixed inset-0 z-50 pointer-events-none flex items-center justify-center">
             <div className="text-6xl animate-scale-in">
               <span className="inline-block animate-bounce" style={{ animationDelay: '0ms' }}>
