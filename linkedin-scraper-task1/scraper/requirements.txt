@@ -1,0 +1,10 @@
+selenium
+webdriver-manager
+beautifulsoup4
+pandas
+requests
+python-dotenv
+
+
+
+

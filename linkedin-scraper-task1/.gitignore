@@ -1,0 +1,42 @@
+# Root
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+.env
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+
+# Selenium downloads/images (keep images dir but ignore actual files)
+scraper/images/*
+!scraper/images/.gitkeep
+
+# Build outputs
+dist/
+build/
+.parcel-cache/
+.cache/
+
+# Vite/React
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env.local
+
+# IDE/project files
+.idea/
+.vscode/
+*.iml
+
+
+

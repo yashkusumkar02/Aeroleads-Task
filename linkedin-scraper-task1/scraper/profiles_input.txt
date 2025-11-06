@@ -1,0 +1,24 @@
+# Added ~20 LinkedIn profile URLs here, one per line.
+# Use public/test profiles only. Example format:
+https://www.linkedin.com/in/amrut-pardeshi-b87bb5119/
+https://www.linkedin.com/in/apurv-upadeo-940aa114a/
+https://www.linkedin.com/in/rahulk200398/
+https://www.linkedin.com/in/kartik-kaushik-446b61177/
+https://www.linkedin.com/in/yash-goyal-728a54166/
+https://www.linkedin.com/in/vishal-bhogan/
+https://www.linkedin.com/in/ved-pandere-17b591229/
+https://www.linkedin.com/in/utkarsha-barde-51b432190/
+https://www.linkedin.com/in/trupti-chaitanya-32680420a/
+https://www.linkedin.com/in/asmita-jadhav-007100259/
+https://www.linkedin.com/in/rutu-ghatge/
+https://www.linkedin.com/in/aniketmdinde/
+https://www.linkedin.com/in/chinmaykanawade10/
+https://www.linkedin.com/in/swarakarnik/
+https://www.linkedin.com/in/nishant-narsale-251250204/
+https://www.linkedin.com/in/subrat-chandra-naha-3a5890202/
+https://www.linkedin.com/in/omlondhe/
+https://www.linkedin.com/in/aakash-barthwal-10b3391b3/
+https://www.linkedin.com/in/shaswat-gusain-2924a324a/
+https://www.linkedin.com/in/tanyarajhans/
+
+
