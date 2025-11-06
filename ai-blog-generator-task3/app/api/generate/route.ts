@@ -177,16 +177,16 @@ export async function POST(request: NextRequest) {
         const slug = generateUniqueSlug(baseSlug, existingSlugs);
         existingSlugs.push(slug);
 
-        // Prepare meta object with all required fields
-        const meta = {
-          title: parsed.title,
+        const title = parsed.title;
+        const formattedMeta = {
+          title,
           metaTitle: extractedMeta.metaTitle,
           metaDesc: extractedMeta.metaDesc,
           keywords: extractedMeta.keywords,
-          provider: 'gemini',
+          provider: 'gemini' as const,
         };
 
-        await savePost(slug, markdown, meta, 'gemini');
+        await savePost(slug, markdown, formattedMeta);
         created.push(slug);
       } catch (error) {
         errors.push({

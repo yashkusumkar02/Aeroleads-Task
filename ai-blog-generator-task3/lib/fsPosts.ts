@@ -36,16 +36,15 @@ export async function ensureContentDirs(): Promise<void> {
 export async function savePost(
   slug: string,
   bodyMd: string,
-  meta: Omit<PostMeta, 'slug' | 'createdAt'>,
-  provider: string
+  meta: Omit<PostMeta, 'slug' | 'createdAt'>
 ): Promise<void> {
   await ensureContentDirs();
 
-  const postMeta: PostMeta = {
+  const createdAt = new Date().toISOString();
+  const record: PostMeta = {
     slug,
+    createdAt,
     ...meta,
-    createdAt: new Date().toISOString(),
-    provider,
   };
 
   // Write markdown file
@@ -54,7 +53,7 @@ export async function savePost(
 
   // Update posts.json
   const posts = await getAllPosts();
-  posts.unshift(postMeta); // Add to beginning
+  posts.unshift(record); // Add to beginning
   await fs.writeFile(POSTS_JSON, JSON.stringify(posts, null, 2), 'utf-8');
 }
 

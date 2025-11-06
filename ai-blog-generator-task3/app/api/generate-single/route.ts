@@ -112,16 +112,16 @@ export async function POST(request: NextRequest) {
     const baseSlug = slugify(parsed.title);
     const slug = generateUniqueSlug(baseSlug, existingSlugs);
 
-    // Prepare meta object with all required fields
-    const meta = {
-      title: parsed.title,
+    const title = parsed.title;
+    const formattedMeta = {
+      title,
       metaTitle: extractedMeta.metaTitle,
       metaDesc: extractedMeta.metaDesc,
       keywords: extractedMeta.keywords,
-      provider: 'gemini',
+      provider: 'gemini' as const,
     };
 
-    await savePost(slug, markdown, meta, 'gemini');
+    await savePost(slug, markdown, formattedMeta);
 
     return NextResponse.json({ 
       success: true,
