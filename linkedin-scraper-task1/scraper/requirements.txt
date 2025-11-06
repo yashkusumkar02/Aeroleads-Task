@@ -4,6 +4,10 @@ beautifulsoup4
 pandas
 requests
 python-dotenv
+fastapi
+uvicorn
+httpx
+
 
 
 

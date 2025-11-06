@@ -65,8 +65,10 @@ const ProfileCard: React.FC<{ profile: Profile }> = ({ profile }) => {
   const about = profile.about || ''
   const aboutShort = about.length > 300 && !expandedAbout ? about.slice(0, 300) + '…' : about
 
-  // Always use a static placeholder/logo instead of scraped images
-  const imageSrc = '/placeholder.jpg'
+  // Use scraped image if available, fallback to placeholder
+  const imageSrc = profile.image_file 
+    ? `${import.meta.env.VITE_API_BASE || ''}/${profile.image_file}`
+    : '/placeholder.jpg'
 
   return (
     <article className="card">
