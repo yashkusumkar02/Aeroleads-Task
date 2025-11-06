@@ -106,11 +106,19 @@ export async function POST(request: NextRequest) {
       markdown = `# ${parsed.title}\n\n${markdown}`;
     }
 
-    const meta = extractMeta(markdown, parsed.title, parsed.keywords);
+    const extractedMeta = extractMeta(markdown, parsed.title, parsed.keywords);
     
     const existingSlugs = await getExistingSlugs();
     const baseSlug = slugify(parsed.title);
     const slug = generateUniqueSlug(baseSlug, existingSlugs);
+
+    // Prepare meta object with all required fields
+    const meta = {
+      title: parsed.title,
+      metaTitle: extractedMeta.metaTitle,
+      metaDesc: extractedMeta.metaDesc,
+      keywords: extractedMeta.keywords,
+    };
 
     await savePost(slug, markdown, meta, 'gemini');
 
