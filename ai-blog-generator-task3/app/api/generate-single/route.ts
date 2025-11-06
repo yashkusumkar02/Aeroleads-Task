@@ -118,6 +118,7 @@ export async function POST(request: NextRequest) {
       metaTitle: extractedMeta.metaTitle,
       metaDesc: extractedMeta.metaDesc,
       keywords: extractedMeta.keywords,
+      provider: 'gemini',
     };
 
     await savePost(slug, markdown, meta, 'gemini');
